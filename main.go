@@ -43,7 +43,7 @@ func markCompleted(index int){
 		tasks[index - 1].completed = true
 		fmt.Println("Task Markes as Complete")
 	}else{
-		fmt.Println("invalid index")
+		fmt.Println("invalid inde")
 	}
 }
 
