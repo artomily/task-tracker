@@ -17,7 +17,6 @@ var tasks []Task
 func main(){
 	println("task-traker v-0.1.0")
 
-
 }
 
 func addTask(task string){
@@ -26,3 +25,25 @@ func addTask(task string){
 
 	fmt.Println("Task Added")
 }
+
+func listTask(){
+	for i, task := range tasks{
+		status := "not yet"
+		if task.completed {
+			status = "done"
+		}
+
+		fmt.Println("%d. %s [$s]\n", i+1, task.taskName, status)
+	}
+
+}
+
+func markCompleted(index int){
+	if index >= 1 && index <= len(tasks){
+		tasks[index - 1].completed = true
+		fmt.Println("Task Markes as Complete")
+	}else{
+		fmt.Println("invalid index")
+	}
+}
+
