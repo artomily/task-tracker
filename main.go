@@ -22,6 +22,11 @@ func addTask(task string) {
 }
 
 func listTask() {
+	if len(tasks) == 0 {
+		fmt.Println("Task List is Empty!")
+		return
+	}
+
 	for i, task := range tasks {
 		status := "not yet"
 		if task.completed {
