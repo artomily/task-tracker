@@ -8,8 +8,9 @@ import (
 )
 
 type Task struct {
-	taskName  string
-	completed bool
+	taskName   string
+	inprogress bool
+	completed  bool
 }
 
 var tasks []Task
@@ -29,6 +30,9 @@ func listTask() {
 
 	for i, task := range tasks {
 		status := "not yet"
+		if task.inprogress {
+			status = "in Progress"
+		}
 		if task.completed {
 			status = "done"
 		}
@@ -38,10 +42,19 @@ func listTask() {
 
 }
 
+func markInProgress(index int) {
+	if index >= 1 && index <= len(tasks){
+		tasks[index-1].inprogress = true //input user -1
+		fmt.Println("Task Mark as In Progress")
+	}else{
+		fmt.Println("invalid index")
+	}
+}
+
 func markCompleted(index int) {
 	if index >= 1 && index <= len(tasks) {
 		tasks[index-1].completed = true
-		fmt.Println("Task Markes as Complete")
+		fmt.Println("Task Mark as Complete")
 	} else {
 		fmt.Println("invalid index")
 	}
@@ -54,6 +67,7 @@ func updateTask(index int, newString string) {
 	} else {
 		fmt.Println("Invalid Index")
 	}
+
 }
 
 func deleteTask(index int) {
@@ -73,15 +87,16 @@ func main() {
 	fmt.Println("Options")
 	fmt.Println("1. Add Task")
 	fmt.Println("2. List Task")
-	fmt.Println("3. Mark as Completed")
-	fmt.Println("4. Edit Task")
-	fmt.Println("5. Delete Task")
-	fmt.Println("6. Exit")
+	fmt.Println("3. Mark as In Progress")
+	fmt.Println("4. Mark as Completed")
+	fmt.Println("5. Edit Task")
+	fmt.Println("6. Delete Task")
+	fmt.Println("7. Exit")
 
 	scanner := bufio.NewScanner(os.Stdin)
 
 	for {
-		fmt.Print("Enter Choice (1 - 6) : ")
+		fmt.Print("Enter Choice (1 - 7) : ")
 		scanner.Scan()
 		input := scanner.Text()
 
@@ -99,13 +114,20 @@ func main() {
 			addTask(taskInput)
 		case 2:
 			listTask()
+			
 		case 3:
 			fmt.Print("Enter Index: ")
 			scanner.Scan()
 
 			indexInput, _ = strconv.Atoi(scanner.Text())
-			markCompleted(indexInput)
+			markInProgress(indexInput)
 		case 4:
+			fmt.Print("Enter Index: ")
+			scanner.Scan()
+
+			indexInput, _ = strconv.Atoi(scanner.Text())
+			markCompleted(indexInput)
+		case 5:
 			fmt.Print("Enter Index: ")
 			scanner.Scan()
 			indexInput, _ = strconv.Atoi(scanner.Text())
@@ -114,12 +136,12 @@ func main() {
 			scanner.Scan()
 			newTaskInput = scanner.Text()
 			updateTask(indexInput, newTaskInput)
-		case 5:
+		case 6:
 			fmt.Print("Enter Index: ")
 			scanner.Scan()
 			indexInput, _ = strconv.Atoi(scanner.Text())
 			deleteTask(indexInput)
-		case 6:
+		case 7:
 			os.Exit(0)
 		default:
 			fmt.Println("invalid choice")
