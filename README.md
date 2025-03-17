@@ -1,12 +1,9 @@
 # Task Tracker Challenge
 
-This project is a solution to the **Task Tracker Challenge** from [roadmap.sh](https://roadmap.sh). The goal is to create a task management system that allows users to add, update, complete, and delete tasks efficiently, with the option to exit the program.
-
-
-
 if you want to start this challenge too, here's the link:
+https://roadmap.sh/projects/task-tracker
 
-https\://roadmap.sh/projects/task-tracker
+This project is a solution to the **Task Tracker Challenge** from [roadmap.sh](https://roadmap.sh). The goal is to create a task management system that allows users to add, update, complete, and delete tasks efficiently, with the option to exit the program.
 
 ## Features
 
@@ -71,4 +68,7 @@ This project is licensed under the MIT License.
 ## Contact
 
 For questions or suggestions, reach out to [vararakya@gmail.com](mailto\:vararakya@gmail.com).
+
+## Upvote This Project
+https://roadmap.sh/projects/task-tracker/solutions?u=6628c1794e8cd00d388294d2
 
