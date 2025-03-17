@@ -3,6 +3,9 @@
 if you want to start this challenge too, here's the link:
 https://roadmap.sh/projects/task-tracker
 
+upvote this project:
+https://roadmap.sh/projects/task-tracker/solutions?u=6628c1794e8cd00d388294d2
+
 This project is a solution to the **Task Tracker Challenge** from [roadmap.sh](https://roadmap.sh). The goal is to create a task management system that allows users to add, update, complete, and delete tasks efficiently, with the option to exit the program.
 
 ## Features
