@@ -5,8 +5,7 @@ This project is a solution to the **Task Tracker Challenge** from [roadmap.sh](h
 
 
 if you want to start this challenge too, here's the link:
-
-https\://roadmap.sh/projects/task-tracker
+https://roadmap.sh/projects/task-tracker
 
 ## Features
 
